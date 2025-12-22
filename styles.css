@@ -1,7 +1,11 @@
 *{
   box-sizing:border-box;
-  font-family:system-ui,"Segoe UI",sans-serif;
 }
+
+body{
+  font-family:"Kanit", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
 .pill-nav{
   position:sticky;
   top:0;
@@ -75,6 +79,7 @@ body{
   justify-content:center;
   align-items:center;
   background:var(--bg-primary);
+  
 }
 
 .card{
@@ -108,14 +113,14 @@ body{
 h1{
   margin:0 0 4px;
   font-size:1.4rem;
-  font-weight:700;
+  font-weight:500;
   color:var(--accent);
 }
 
 h2{
   margin:0 0 4px;
   font-size:1.4rem;
-  font-weight:700;
+  font-weight:400;
   color:var(--text-muted);
   align-items: start;
 }
@@ -126,7 +131,7 @@ p{
   color:var(--text-muted);
 }
 .img-wrap{
-  width: 280px;
+  width: 240px;
   text-align: center;
 }
 box-center{
