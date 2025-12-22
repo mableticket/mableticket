@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mable Ticket</title>
+    <link rel="stylesheet" href="theme.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="card">
+        <nav class="pill-nav">
+            <div class="pill-left">
+                <a href="index.html" class="ghost"><img style="width: 64px; margin-left: 36px" src="img/logo.png"
+                        alt="logo" /></a>
+            </div>
+
+            <div class="pill-center" id="openDrawerBtn">
+                <a href="index.html" class="ghost">⏪</a>
+                <a href="#" class="primary">🛫How to Reserve Queue</a>
+            </div>
+
+            <!-- <div class="pill-right">
+    ☰
+  </div> -->
+        </nav>
+        <div class="card">
+            <div style="width: auto; gap: 2px;">
+                <div style="margin-top: 20px">
+                    <h2>💖สิทธิพิเศษสำหรับสมาชิก Mable Ticket💖</h2>
+                <!-- <h2>
+                    สะสมแต้ม (Reward cards)
+                </h2> -->
+                <div class="links-header">
+                </div>
+                <div class="links grid-layout">
+                    <section class="accordion">
+                        <!-- <h2>HOW TO GET REWARD POINTS</h2> -->
+
+                        <details class="acc-item">
+                            <summary><span>⭐️</span> สะสมแต้ม / Reward cards</summary>
+
+                            <div class="acc-content">
+                                <p>
+                                    • สิทธิพิเศษสำหรับMember<br />
+                                    💖ทุกๆรีวิวได้1แต้ม<br />
+                                    💖ต่อที่1 สะสมครบ 3แต้มได้ ลดค่ากด10%<br />
+                                    💖ต่อที่2 สะสมต่อจนครบ 7แต้มสิทธิในการจองคิวก่อนใคร<br />
+                                    ⭐️วิธีรับแต้ม<br />
+                                    1. แคปรีวิวส่งทางไลน์ ส่งรีวิวไม่เกิน1-3วันหลังรีวิวหากเลยจะไม่ได้แต้ม<br />
+                                    2. รอแอดมินส่งคะแนนให้ ลูกค้ากดใน link และกดรับคะแนนได้เลยค่ะ<br />
+
+                                </p>
+                                <img class="img-wrap" src="img/Reward cardTH.png" alt="paythai" />
+                                <p>
+                                    • Special privileges for Members<br />
+                                    💖Every review gets 1 point.<br />
+                                    💖First: Collect 3 points to get a 10% discount on the ticket fee.<br />
+                                    💖Second: Continue collecting until you reach 7 points to get the privilege of
+                                    booking a queue before anyone else.<br />
+                                    ⭐️How to earn points<br />
+                                    1. Capture the review and send it via Line. Reviews must be sent within 1-3 days
+                                    after the review; otherwise, no points will be awarded.<br />
+                                    2. Wait for the admin to send the points. Customers can click on the link and claim
+                                    their points immediately.<br />
+                                </p>
+                                <img class="img-wrap" src="img/Reward cardEN.png" alt="paythai" />
+                            </div>
+
+                        </details>
+                    </section>
+                </div>
+            </div>
+</div>
+            <div>
+                <footer>© Mableticket |
+            <a href="FAQ.html"><span>💬</span> FAQ</a></footer>
+            </div>
+        </div>
+
+
+        <div class="drawer-overlay"></div>
+
+<div class="drawer">
+  <div class="drawer-header">
+    <span>🎀</span>
+    <button class="drawer-close">✕</button>
+  </div>
+  <div class="drawer-content">
+    <a href="Reserve.html">🌀รายละเอียดการกดบัตร (Details about using our service)
+</a>
+    <a href="Confirmqueue.html">✅ยืนยันคิว Confirm queue</a>
+    <a href="Rewards.html">⭐️สะสมแต้ม Rewards</a>
+  </div>
+</div>
+
+
+<script>
+const drawer = document.querySelector('.drawer');
+const overlay = document.querySelector('.drawer-overlay');
+const closeBtn = document.querySelector('.drawer-close');
+const openBtn = document.getElementById('openDrawerBtn');
+
+// เปิด drawer
+openBtn.addEventListener('click', () => {
+  drawer.classList.add('open');
+  overlay.classList.add('show');
+});
+
+// ปิด drawer (เฉพาะ X)
+closeBtn.addEventListener('click', () => {
+  drawer.classList.remove('open');
+  overlay.classList.remove('show');
+});
+
+// overlay กดไม่ปิด drawer
+overlay.addEventListener('click', e => {
+  e.stopPropagation(); // ป้องกันคลิก overlay ปิด drawer
+});
+</script>
+
+</body>
+
+</html>

@@ -25,16 +25,17 @@
               alt="logo"
           /></a>
         </div>
-
-        <div class="pill-center">
+<!-- 
+        <div class="pill-center" id="menuBtn">
           <a href="Reserve.html" class="primary">🛫How to Reserve Queue</a>
+        </div> -->
+      <div class="pill-center" id="openDrawerBtn">
+          <a href="#" class="primary">🛫How to Reserve Queue</a>
         </div>
-
-        <!-- <div class="pill-right">
+        <!-- <div class="pill-right" id="menuBtn">
     ☰
   </div> -->
       </nav>
-
       <div class="container">
         <img class="round-img" src="img/mableprofile.png" alt="Description" />
         <div style="width: fit-content">
@@ -96,5 +97,51 @@
             <a href="FAQ.html"><span>💬</span> FAQ</a></footer>
       </div>
     </div>
+
+    
+      <!-- drawer -->
+<!-- <button id="openDrawerBtn">เปิด Drawer</button> -->
+
+<div class="drawer-overlay"></div>
+
+<div class="drawer">
+  <div class="drawer-header">
+    <span>🎀</span>
+    <button class="drawer-close">✕</button>
+  </div>
+  <div class="drawer-content">
+    <a href="Reserve.html">🌀รายละเอียดการกดบัตร (Details about using our service)
+</a>
+    <a href="Confirmqueue.html">✅ยืนยันคิว Confirm queue</a>
+    <a href="Rewards.html"> ⭐️สะสมแต้ม Rewards</a>
+  </div>
+</div>
+
+
+<script>
+const drawer = document.querySelector('.drawer');
+const overlay = document.querySelector('.drawer-overlay');
+const closeBtn = document.querySelector('.drawer-close');
+const openBtn = document.getElementById('openDrawerBtn');
+
+// เปิด drawer
+openBtn.addEventListener('click', () => {
+  drawer.classList.add('open');
+  overlay.classList.add('show');
+});
+
+// ปิด drawer (เฉพาะ X)
+closeBtn.addEventListener('click', () => {
+  drawer.classList.remove('open');
+  overlay.classList.remove('show');
+});
+
+// overlay กดไม่ปิด drawer
+overlay.addEventListener('click', e => {
+  e.stopPropagation(); // ป้องกันคลิก overlay ปิด drawer
+});
+
+</script>
+
   </body>
 </html>
