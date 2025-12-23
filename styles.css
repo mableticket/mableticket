@@ -80,9 +80,11 @@ body{
   display:flex;
   flex-direction:column;
   gap:10px;
-
+  height: fit-content;
   overflow-y:auto;
   flex:1;
+  align-items: center;
+
 }
 
 .drawer-content a{
