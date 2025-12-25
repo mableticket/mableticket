@@ -444,8 +444,64 @@ box-center{
   to{ opacity:1; transform:none; }
 }
 
+@keyframes fall-drift {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  100% {
+    transform: translate(var(--x), 120vh) rotate(360deg);
+  }
+}
+#snow-test{
+  position:fixed;
+  inset:0;
+  z-index:99999;
+  pointer-events:none;
+
+  display:block;
+}
+
+ /* festival-banner */
+.festival-banner{
+  position:sticky;
+  top:0;
+  z-index:80;
+
+  background:#fff;
+  border-bottom:1px dashed #e5e7eb;
+
+  overflow:hidden;
+  height:38px;
+
+  display:flex;
+  align-items:center;
+}
+
+.banner-track{
+  display:flex;
+  gap:40px;
+  white-space:nowrap;
+
+  animation: banner-move 18s linear infinite;
+}
+
+.banner-track span{
+  font-size:14px;
+  color:#374151;
+}
+
+@keyframes banner-move{
+  from{
+    transform:translateX(0);
+  }
+  to{
+    transform:translateX(-50%);
+  }
+}
+
 footer{
   margin-top:12px;
   font-size:.75rem;
   color:var(--text-muted);
 }
+
