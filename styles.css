@@ -514,30 +514,35 @@ box-center{
 }
 
  /* festival-banner */
-.banner{
-  position:relative;
-  overflow:hidden;          /* 🔑 สำคัญ */
-  background:#ffffffcc;
-  backdrop-filter:blur(10px);
-  border-radius:12px;
-  padding:10px 0;
+.festival-banner{
+  position:sticky;
+  top:0;
+  z-index:80;
+
+  background:#fff;
+  border-bottom:1px dashed #e5e7eb;
+
+  overflow:hidden;
+  height:38px;
+
+  display:flex;
+  align-items:center;
 }
 
 .banner-track{
   display:flex;
-  width:max-content;        /* 🔑 สำคัญ */
-  animation:marquee 14s linear infinite;
-  will-change:transform;
+  gap:40px;
+  white-space:nowrap;
+
+  animation: banner-move 18s linear infinite;
 }
 
 .banner-track span{
-  padding-right:40px;
-  white-space:nowrap;
-  font-weight:600;
+  font-size:14px;
+  color:#374151;
 }
 
-/* ใช้ transform เท่านั้น */
-@keyframes marquee{
+@keyframes banner-move{
   from{
     transform:translateX(0);
   }
@@ -545,12 +550,6 @@ box-center{
     transform:translateX(-50%);
   }
 }
-@media (prefers-reduced-motion: reduce){
-  .banner-track{
-    animation-duration:30s; /* ไม่ปิด แต่ช้าลง */
-  }
-}
-
 
 footer{
   margin-top:12px;
