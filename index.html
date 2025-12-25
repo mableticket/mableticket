@@ -111,7 +111,7 @@
       </div>
     </div>
     <!-- snow effect -->
-<div id="snow-test" style="position:fixed;inset:0;z-index:99999;pointer-events:none;"></div>
+<!-- <div id="snow-test" style="position:fixed;inset:0;z-index:99999;pointer-events:none;"></div> -->
 
     
       <!-- drawer -->
@@ -159,7 +159,7 @@ overlay.addEventListener('click', e => {
 
 //snow effect
 </script>
-<script>
+<!-- <script>
   const snow = document.getElementById("snow-test");
   const EMOJIS = ["❄️","🎄"];
   const COUNT = 12; // จำนวนที่ตก
@@ -185,7 +185,38 @@ overlay.addEventListener('click', e => {
 
     snow.appendChild(e);
   }
+</script> -->
+
+<!-- // snow effect - tree falling*/ -->
+<div id="snow-layer"></div>
+<script>
+const layer = document.getElementById("snow-layer");
+
+setInterval(() => {
+  if(layer.children.length > 20) return;
+
+  const el = document.createElement("div");
+  el.classList.add("fall");
+
+  const r = Math.random();
+
+  if(r < 0.45){
+    el.classList.add("snow");   // ❄️
+  }else if(r < 0.7){
+    el.classList.add("star");   // ⭐
+  }else{
+    el.classList.add("tree");   // 🎄
+  }
+
+  el.style.left = Math.random() * 100 + "vw";
+  el.style.animationDuration = 6 + Math.random() * 6 + "s";
+
+  layer.appendChild(el);
+  setTimeout(()=>el.remove(), 12000);
+}, 650);
 </script>
+
+
 
   </body>
 </html>
