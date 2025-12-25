@@ -461,36 +461,83 @@ box-center{
   display:block;
 }
 
- /* festival-banner */
-.festival-banner{
-  position:sticky;
-  top:0;
-  z-index:80;
-
-  background:#fff;
-  border-bottom:1px dashed #e5e7eb;
-
+#snow-layer{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:9999;
   overflow:hidden;
-  height:38px;
+}
 
-  display:flex;
-  align-items:center;
+.fall{
+  position:absolute;
+  top:-20px;
+  animation:fall linear;
+}
+
+.snow{
+  width:20px;
+  height:20px;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg stroke='%23cfe9ff' stroke-width='2' stroke-linecap='round'%3E%3Cline x1='12' y1='2' x2='12' y2='22'/%3E%3Cline x1='2' y1='12' x2='22' y2='12'/%3E%3Cline x1='4' y1='4' x2='20' y2='20'/%3E%3Cline x1='20' y1='4' x2='4' y2='20'/%3E%3C/g%3E%3C/svg%3E") no-repeat center/contain;
+  opacity:.9;
+}
+
+.star{
+  width:20px;
+  height:20px;
+  background:linear-gradient(180deg,#ffe680,#ffb703);
+  clip-path:polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  );
+  opacity:.95;
+}
+
+.tree{
+  width:14px;
+  height:22px;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 32'%3E%3Cpolygon points='12,0 22,20 2,20' fill='%2386efac'/%3E%3Cpolygon points='12,6 20,26 4,26' fill='%234ade80'/%3E%3Crect x='10' y='26' width='4' height='6' fill='%23a16207'/%3E%3C/svg%3E") no-repeat center/contain;
+}
+
+@keyframes fall{
+  to{
+    transform:translateY(110vh);
+  }
+}
+
+ /* festival-banner */
+.banner{
+  position:relative;
+  overflow:hidden;          /* 🔑 สำคัญ */
+  background:#ffffffcc;
+  backdrop-filter:blur(10px);
+  border-radius:12px;
+  padding:10px 0;
 }
 
 .banner-track{
   display:flex;
-  gap:40px;
-  white-space:nowrap;
-
-  animation: banner-move 18s linear infinite;
+  width:max-content;        /* 🔑 สำคัญ */
+  animation:marquee 14s linear infinite;
+  will-change:transform;
 }
 
 .banner-track span{
-  font-size:14px;
-  color:#374151;
+  padding-right:40px;
+  white-space:nowrap;
+  font-weight:600;
 }
 
-@keyframes banner-move{
+/* ใช้ transform เท่านั้น */
+@keyframes marquee{
   from{
     transform:translateX(0);
   }
@@ -498,6 +545,12 @@ box-center{
     transform:translateX(-50%);
   }
 }
+@media (prefers-reduced-motion: reduce){
+  .banner-track{
+    animation-duration:30s; /* ไม่ปิด แต่ช้าลง */
+  }
+}
+
 
 footer{
   margin-top:12px;
